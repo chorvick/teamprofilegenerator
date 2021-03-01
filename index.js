@@ -38,11 +38,47 @@ const promptUser = () => {
         }
 
     ])
-
-
-
-
-
-
 }
+// if (role === "Intern") {
+//     extraInfo = "school name ";
+// } else if (role === "Engineer") {
+//     extraInfo = "Github user name ";
+// } else {
+//     extraInfo = "Office number ";
+// }
+
+// inquirer.prompt([
+//     {
+//         message: `Please enter this team members ${extraInfo}`,
+//         name: "extraInfo"
+//     },
+//     {
+//         type: "list",
+//         message: "Would you like to add another team member ?",
+//         choices: [
+//             "yes",
+//             "no"
+//         ],
+//         name: "addNext"
+//     }
+// ])
+
+
+
+
 promptUser();
+
+
+
+const html = `<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Team Profile</title>
+</head>
+<body>
+  
+</body>
+</html>`
