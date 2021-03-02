@@ -13,9 +13,13 @@
     "test": "^0.6.0"
   },
   "devDependencies": {"jest": "^24.9.0"},
-  "scripts": {
-    "test": "echo \"No test specified\""
-  },
+
+  
+  "scripts" : { 
+    "test" : "jest" 
+ },
+  
+  
   "repository": {
     "type": "git",
     "url": "git+https://github.com/chorvick/teamprofilegenerator.git"
