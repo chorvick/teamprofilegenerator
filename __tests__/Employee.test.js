@@ -23,7 +23,7 @@ test("check that id will return properly", () => {
 });
 
 test("check that e mail returns properly", () => {
-    const email = "Henry@Henry.com"
+    const email = "Henry@Henry.com";
     const employee = new Employee("Henry", 999, email);
     expect(employee.email).toBe(email);
 
@@ -31,9 +31,9 @@ test("check that e mail returns properly", () => {
 });
 
 test("Make sure get name functions correctly", () => {
-    const name = "Henry"
-    const employee = new Employee(name)
-    expect(employee.getName()).toBe(name)
+    const name = "Henry";
+    const employee = new Employee(name);
+    expect(employee.getName()).toBe(name);
 
 
 });
@@ -51,3 +51,8 @@ test("Make sure email is returned properly", () => {
     expect(employee.getEmail()).toBe(email)
 
 })
+test("Make sure getRole function returns Employee", () => {
+    const role = "Employee";
+    const employee = new Employee("Henry", 999, "Henry@Henry.com", role);
+    expect(employee.getRole()).toBe(role);
+});
