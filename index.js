@@ -10,7 +10,7 @@ const fs = require("fs");
 
 
 const promptUser = () => {
-    ///    console.log("Team Profile Generator")
+    console.log("Team Profile Generator")
 
     inquirer.prompt([
         {
@@ -54,7 +54,7 @@ const promptUser = () => {
 //     },
 //     {
 //         type: "list",
-//         message: "Would you like to add another team member ?",
+//         message: "Would you like to add another team member test ?",
 //         choices: [
 //             "yes",
 //             "no"
@@ -68,17 +68,32 @@ const promptUser = () => {
 
 promptUser();
 
+// const promptUser = () => {
+//     promptUser().then((answers) => {
+//         try {
+//             const html = generateHtml(answers);
+//             fs.writeFileSync('./src/index.html', html);
+//             console.log('Successfully wrote to read me');
+//         } catch (error) {
+//             console.log(error);
 
 
-const html = `<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Team Profile</title>
-</head>
-<body>
-  
-</body>
-</html>`
+//         }
+//     });
+// }
+
+// function generateHtml() {
+
+//     const html = `<!DOCTYPE html>
+// <html lang="en">
+// <head>
+//   <meta charset="UTF-8">
+//   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+//   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+//   <title>Team Profile</title>
+// </head>
+// <body>
+
+// </body>
+// </html>`
+// }
