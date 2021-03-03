@@ -34,7 +34,7 @@ const promptUser = (current_roster) => {
             name: "email"
         },
         {
-            massage: "What is this person's office number?",
+            message: "What is this person's office number?",
             name: "office_number",
             when: (answers) => answers.role === "Manager"
         },
@@ -120,12 +120,54 @@ function populate_cards(roster) {
             out_cards += `<div class="card" style="width: 18rem;">
             <img class="card-img-top" src="..." alt="Card image cap">
             <div class="card-body">
+            <span class="fas fa-glasses"></span>
               <h5 class="card-title">${member.name}</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
+              <h5 class="card-title">${member.role}</h5>
+              <p class="card-text">ID: ${member.id}</p>
+              <p class="card-text">Email: ${member.email}</p>
+              <p class="card-text">Github: ${member.github_username}</p>
+              
             </div>
           </div>`
         }
+
+        if (member.role == "Intern") {
+            // Make a card for an intern
+            out_cards += `<div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="..." alt="Card image cap">
+            <div class="card-body">
+            <span class="fas fa-glasses"></span>
+              <h5 class="card-title">${member.name}</h5>
+              <h5 class="card-title">${member.role}</h5>
+              <p class="card-text">ID: ${member.id}</p>
+              <p class="card-text">Email: ${member.email}</p>
+              <p class="card-text">School: ${member.school}</p>
+              
+            </div>
+          </div>`
+        }
+
+        if (member.role == "Manager") {
+            // Make a card for a manager
+            out_cards += `<div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="..." alt="Card image cap">
+            <div class="card-body">
+            <span class="fas fa-glasses"></span>
+              <h5 class="card-title">${member.name}</h5>
+              <h5 class="card-title">${member.role}</h5>
+              <p class="card-text">ID: ${member.id}</p>
+              <p class="card-text">Email: ${member.email}</p>
+              <p class="card-text">Office Number: ${member.office_number}</p>
+              
+            </div>
+          </div>`
+        }
+
+
+
+
+
+
     })
     return out_cards
 }
@@ -138,6 +180,9 @@ function render_team(team) {
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
+<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+
   <title>Team Profile</title>
 </head>
 <body>
@@ -148,3 +193,10 @@ ${populate_cards(team)}
 
     return html
 }
+
+
+
+
+// out_cards += `<div class="card" style="width: 18rem;">
+// <img class="card-img-top" src="..." alt="Card image cap">
+// <div class="card-body">
