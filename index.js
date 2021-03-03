@@ -85,7 +85,8 @@ function populate_cards(roster) {
               <h4 class="card-title">${member.role}</h4>
               <p class="card-text">ID: ${member.id}</p>
               <a href="mailto:${member.email}">Email: ${member.email}</a >
-              <p class="card-text">Github: ${member.github_username}</p>
+              <p>Github: <a href="https://www.github.com/${member.github_username}" target="_blank">${member.github_username}</a>.</p>
+              
               
             </div>
           </div>`
