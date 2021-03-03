@@ -96,7 +96,7 @@ function populate_cards(roster) {
             out_cards += `<div class="card" style="width: 18rem;">
             <img class="card-img-top" src="" >
             <div class="card-body">
-            <span class="fas fa-glasses"></span>
+            <span  class="fas fa-graduation-cap"></span>
               <h5 class="card-title">${member.name}</h5>
               <h5 class="card-title">${member.role}</h5>
               <p class="card-text">ID: ${member.id}</p>
@@ -113,7 +113,7 @@ function populate_cards(roster) {
             <div class="card" style="width: 18rem;">
             <img class="card-img-top" src="">
             <div class="card-body">
-            <span class="fas fa-glasses"></span>
+            <span class="fas fa-coffee"></span>
               <h5 class="card-title">${member.name}</h5>
               <h5 class="card-title">${member.role}</h5>
               <p class="card-text">ID: ${member.id}</p>
