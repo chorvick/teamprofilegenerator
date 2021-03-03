@@ -12,10 +12,6 @@ const promptUser = (current_roster) => {
     /// console.log(`Current roster: ${JSON.stringify(roster)}`)
     inquirer.prompt([
         {
-            message: "Please enter the employee's name ",
-            name: "name"
-        },
-        {
             type: "list",
             message: "Please select the employee job title ",
             choices: [
@@ -24,6 +20,10 @@ const promptUser = (current_roster) => {
                 "Manager"
             ],
             name: "role"
+        },
+        {
+            message: "Please enter the employee's name ",
+            name: "name"
         },
         {
             message: "Please enter the employee Id number ",
