@@ -77,12 +77,12 @@ function populate_cards(roster) {
     roster.forEach(member => {
         if (member.role == "Engineer") {
             // Make a card for an engineer
-            out_cards += `<div class="card" style="width: 18rem;">
+            out_cards += `<div class="card" style="min-width: 30%;">
             <img class="card-img-top" src="" >
             <div class="card-body">
             <span class="fas fa-glasses"></span>
-              <h5 class="card-title">${member.name}</h5>
-              <h5 class="card-title">${member.role}</h5>
+              <h3 class="card-title">${member.name}</h3>
+              <h4 class="card-title">${member.role}</h4>
               <p class="card-text">ID: ${member.id}</p>
               <p class="card-text">Email: ${member.email}</p>
               <p class="card-text">Github: ${member.github_username}</p>
@@ -93,12 +93,12 @@ function populate_cards(roster) {
 
         if (member.role == "Intern") {
             // Make a card for an intern
-            out_cards += `<div class="card" style="width: 18rem;">
+            out_cards += `<div class="card" style="min-width: 30%;">
             <img class="card-img-top" src="" >
             <div class="card-body">
             <span  class="fas fa-graduation-cap"></span>
-              <h5 class="card-title">${member.name}</h5>
-              <h5 class="card-title">${member.role}</h5>
+              <h3 class="card-title">${member.name}</h3>
+              <h4 class="card-title">${member.role}</h4>
               <p class="card-text">ID: ${member.id}</p>
               <p class="card-text">Email: ${member.email}</p>
               <p class="card-text">School: ${member.school}</p>
@@ -110,12 +110,12 @@ function populate_cards(roster) {
         if (member.role == "Manager") {
             // Make a card for a manager
             out_cards += `<div class="col-sm-4">
-            <div class="card" style="width: 18rem;">
+            <div class="card" style="min-width: 30%;">
             <img class="card-img-top" src="">
             <div class="card-body">
             <span class="fas fa-coffee"></span>
-              <h5 class="card-title">${member.name}</h5>
-              <h5 class="card-title">${member.role}</h5>
+              <h3 class="card-title">${member.name}</h3>
+              <h4 class="card-title">${member.role}</h4>
               <p class="card-text">ID: ${member.id}</p>
               <p class="card-text">Email: ${member.email}</p>
               <p class="card-text">Office Number: ${member.office_number}</p>
@@ -148,17 +148,26 @@ function render_team(team) {
   <title>Team Profile</title>
 </head>
 <body>
+<div class="container-fluid">
+<div class="row">
+    <div class="col-12 jumbotron mb-3 team-heading">
 <div class="header">
 <h1 style="color:azure;text-align:center;background-color: blue;">My Team</h1>
-  <br>
+ </div>
+ </div>
+ </div>
+
+
+<br>
   <br>
   <br>
 </div > 
-<div class="container-fluid">
+<div class="container">
 <div class="row">
-
+<div class="team-area col-12 d-flex flex-wrap justify-content-center">
   
 ${populate_cards(team)}
+</div>
 </div>
 </div>
 </body>
