@@ -1,15 +1,15 @@
 ///// javascript goes here
 const inquirer = require("inquirer");
-//const Employee = require("./lib/Employee");
-//const Manager = require("./lib/Manager");
-//const Engineer = require("./lib/Engineer");
-//const Intern = require("./lib/Intern");
+const Employee = require("./lib/Employee");
+const Manager = require("./lib/Manager");
+const Engineer = require("./lib/Engineer");
+const Intern = require("./lib/Intern");
 const fs = require("fs");
 
 const promptUser = (current_roster) => {
     let roster = current_roster || []
     console.log("Team Profile Generator")
-    console.log(`Current roster: ${JSON.stringify(roster)}`)
+    /// console.log(`Current roster: ${JSON.stringify(roster)}`)
     inquirer.prompt([
         {
             message: "Please enter the employee's name ",
@@ -55,62 +55,22 @@ const promptUser = (current_roster) => {
         }
     ]).then(answers => {
         roster.push(answers)
-        console.log(`This is the roster ${roster}`)
+        ///console.log(`This is the roster ${roster}`)
         // Since I get an object, why cant I just use an array of those objects to populate the HTML if I am also writing the render method.
         if (answers.continue) {
-            console.log("The user wants to continue")
+            //  console.log("The user wants to continue")
             promptUser(roster)
         } else {
-            console.log("No continue")
+            //   console.log("No continue")
             fs.writeFile("test.html", render_team(roster), () => {
-                console.log("I wrote a file")
+                console.log("The html file of your team has been generated. Thank you.")
             })
         }
     })
 }
 
-// if (role === "Intern") {
-//     extraInfo = "school name ";
-// } else if (role === "Engineer") {
-//     extraInfo = "Github user name ";
-// } else {
-//     extraInfo = "Office number ";
-// }
-
-// inquirer.prompt([
-//     {
-//         message: `Please enter this team members ${extraInfo}`,
-//         name: "extraInfo"
-//     },
-//     {
-//         type: "list",
-//         message: "Would you like to add another team member test ?",
-//         choices: [
-//             "yes",
-//             "no"
-//         ],
-//         name: "addNext"
-//     }
-// ])
-
-
-
-
 promptUser();
 
-// const promptUser = () => {
-//     promptUser().then((answers) => {
-//         try {
-//             const html = generateHtml(answers);
-//             fs.writeFileSync('./src/index.html', html);
-//             console.log('Successfully wrote to read me');
-//         } catch (error) {
-//             console.log(error);
-
-
-//         }
-//     });
-// }
 
 function populate_cards(roster) {
     let out_cards = ""
@@ -118,7 +78,7 @@ function populate_cards(roster) {
         if (member.role == "Engineer") {
             // Make a card for an engineer
             out_cards += `<div class="card" style="width: 18rem;">
-            <img class="card-img-top" src="..." alt="Card image cap">
+            <img class="card-img-top" src="..." alt="">
             <div class="card-body">
             <span class="fas fa-glasses"></span>
               <h5 class="card-title">${member.name}</h5>
@@ -134,7 +94,7 @@ function populate_cards(roster) {
         if (member.role == "Intern") {
             // Make a card for an intern
             out_cards += `<div class="card" style="width: 18rem;">
-            <img class="card-img-top" src="..." alt="Card image cap">
+            <img class="card-img-top" src="" alt="">
             <div class="card-body">
             <span class="fas fa-glasses"></span>
               <h5 class="card-title">${member.name}</h5>
@@ -150,7 +110,7 @@ function populate_cards(roster) {
         if (member.role == "Manager") {
             // Make a card for a manager
             out_cards += `<div class="card" style="width: 18rem;">
-            <img class="card-img-top" src="..." alt="Card image cap">
+            <img class="card-img-top" src="">
             <div class="card-body">
             <span class="fas fa-glasses"></span>
               <h5 class="card-title">${member.name}</h5>
