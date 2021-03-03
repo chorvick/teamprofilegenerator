@@ -77,8 +77,8 @@ function populate_cards(roster) {
     roster.forEach(member => {
         if (member.role == "Engineer") {
             // Make a card for an engineer
-            out_cards += `<div class="card" style="min-width: 30%;">
-            <img class="card-img-top" src="" >
+            out_cards += `<div class="card" style="min-width: 30%;background-color: powderblue;border: 3px black">
+            
             <div class="card-body">
             <span class="fas fa-glasses"></span>
               <h3 class="card-title">${member.name}</h3>
@@ -93,8 +93,8 @@ function populate_cards(roster) {
 
         if (member.role == "Intern") {
             // Make a card for an intern
-            out_cards += `<div class="card" style="min-width: 30%;">
-            <img class="card-img-top" src="" >
+            out_cards += `<div class="card" style="min-width: 30%;background-color: Bisque;border: 3px black">
+            
             <div class="card-body">
             <span  class="fas fa-graduation-cap"></span>
               <h3 class="card-title">${member.name}</h3>
@@ -110,8 +110,8 @@ function populate_cards(roster) {
         if (member.role == "Manager") {
             // Make a card for a manager
             out_cards += `<div class="col-sm-4">
-            <div class="card" style="min-width: 30%;">
-            <img class="card-img-top" src="">
+            <div class="card" style="min-width: 30%;background-color: Beige;border: 3px black">
+            
             <div class="card-body">
             <span class="fas fa-coffee"></span>
               <h3 class="card-title">${member.name}</h3>
