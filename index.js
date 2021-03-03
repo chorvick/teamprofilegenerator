@@ -109,7 +109,8 @@ function populate_cards(roster) {
 
         if (member.role == "Manager") {
             // Make a card for a manager
-            out_cards += `<div class="card" style="width: 18rem;">
+            out_cards += `<div class="col-sm-4">
+            <div class="card" style="width: 18rem;">
             <img class="card-img-top" src="">
             <div class="card-body">
             <span class="fas fa-glasses"></span>
@@ -152,8 +153,13 @@ function render_team(team) {
   <br>
   <br>
 </div > 
-${populate_cards(team)}
+<div class="container-fluid">
+<div class="row">
 
+  
+${populate_cards(team)}
+</div>
+</div>
 </body>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
@@ -162,6 +168,8 @@ ${populate_cards(team)}
 
     return html
 }
+
+
 
 
 
