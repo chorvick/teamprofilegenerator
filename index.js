@@ -84,7 +84,7 @@ function populate_cards(roster) {
               <h3 class="card-title">${member.name}</h3>
               <h4 class="card-title">${member.role}</h4>
               <p class="card-text">ID: ${member.id}</p>
-              <p class="card-text">Email: ${member.email}</p>
+              <a href="mailto:${member.email}">Email: ${member.email}</a >
               <p class="card-text">Github: ${member.github_username}</p>
               
             </div>
@@ -100,7 +100,7 @@ function populate_cards(roster) {
               <h3 class="card-title">${member.name}</h3>
               <h4 class="card-title">${member.role}</h4>
               <p class="card-text">ID: ${member.id}</p>
-              <p class="card-text">Email: ${member.email}</p>
+              <a href="mailto:${member.email}">Email: ${member.email}</a >
               <p class="card-text">School: ${member.school}</p>
               
             </div>
@@ -117,7 +117,7 @@ function populate_cards(roster) {
               <h3 class="card-title">${member.name}</h3>
               <h4 class="card-title">${member.role}</h4>
               <p class="card-text">ID: ${member.id}</p>
-              <p class="card-text">Email: ${member.email}</p>
+              <a href="mailto:${member.email}">Email: ${member.email}</a >
               <p class="card-text">Office Number: ${member.office_number}</p>
               
             </div>
@@ -156,8 +156,6 @@ function render_team(team) {
  </div>
  </div>
  </div>
-
-
 <br>
   <br>
   <br>
@@ -171,16 +169,11 @@ ${populate_cards(team)}
 </div>
 </div>
 </body>
-
 </html>`
 
     return html
 }
-
-
-
-
-
-
+///
+///<a href="mailto:${member.email}">Email: ${member.email}</a >
 
 
