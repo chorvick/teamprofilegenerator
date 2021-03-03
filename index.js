@@ -62,7 +62,7 @@ const promptUser = (current_roster) => {
             promptUser(roster)
         } else {
             //   console.log("No continue")
-            fs.writeFile("test.html", render_team(roster), () => {
+            fs.writeFile("index.html", render_team(roster), () => {
                 console.log("The html file of your team has been generated. Thank you.")
             })
         }
@@ -146,13 +146,24 @@ function render_team(team) {
   <title>Team Profile</title>
 </head>
 <body>
+<div class="header">
+<h1 style="color:azure;text-align:center;background-color: blue;">My Team</h1>
+  <br>
+  <br>
+  <br>
+</div > 
 ${populate_cards(team)}
 
 </body>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </html>`
 
     return html
 }
+
+
 
 
 
