@@ -5,6 +5,8 @@
 ## Description
 
 This program will accept user input from a nodejs command line and generate a formatted team roster in html based on input.
+See video demo [HERE](https://drive.google.com/file/d/16EPCuYwRZXJe6YJkVxpymkK0zwADoElr/view?usp=sharing)
+
 
 ## Table of Contents
 
