@@ -1,4 +1,4 @@
-///// javascript goes here
+///// javascript goes here  we 'require' the inquirer package and the templates for Employee, Manager, Engineer and Intern ad FS also
 const inquirer = require("inquirer");
 const Employee = require("./lib/Employee");
 const Manager = require("./lib/Manager");
@@ -7,10 +7,10 @@ const Intern = require("./lib/Intern");
 const fs = require("fs");
 console.log("Team Profile Generator")
 const promptUser = (current_roster) => {
-    let roster = current_roster || []
+    let roster = current_roster || []  ////// we add to the roster our data as input if first time, if after first time let roster become current roster the key is to let us go through more than once and preserve and keep our data in the array
     // console.log("Team Profile Generator")
     /// console.log(`Current roster: ${JSON.stringify(roster)}`)
-    inquirer.prompt([
+    inquirer.prompt([                    //// we use inquirer to ask specifics of the user
         {
             type: "list",
             message: "Please select the employee job title ",
@@ -36,17 +36,17 @@ const promptUser = (current_roster) => {
         {
             message: "What is this person's office number?",
             name: "office_number",
-            when: (answers) => answers.role === "Manager"
+            when: (answers) => answers.role === "Manager"    //////////only executed if manager so it only asks this if they selected manager
         },
         {
             message: "What is the user's Github?",
             name: "github_username",
-            when: (answers) => answers.role === "Engineer"
+            when: (answers) => answers.role === "Engineer"  /////////only executed if manager so it only asks this if they selected Engieer
         },
         {
             message: "What School does the intern go to?",
             name: "school",
-            when: (answers) => answers.role === "Intern"
+            when: (answers) => answers.role === "Intern"   /////////only executed if manager so it only asks this if they selected an intern
         },
         {
             type: "confirm",
@@ -59,7 +59,7 @@ const promptUser = (current_roster) => {
         // Since I get an object, why cant I just use an array of those objects to populate the HTML if I am also writing the render method.
         if (answers.continue) {
             //  console.log("The user wants to continue")
-            promptUser(roster)
+            promptUser(roster)        //// if they are not finished adding team members we call the function again else we write the html file and thank them  -- index.html is written to root directory
         } else {
             //   console.log("No continue")
             fs.writeFile("index.html", render_team(roster), () => {
@@ -133,7 +133,7 @@ function populate_cards(roster) {
     })
     return out_cards
 }
-function render_team(team) {
+function render_team(team) {  /// makes the html page with a fixed template plus a card for each team member the user input see line 168
 
     const html = `<!DOCTYPE html>
 <html lang="en">
@@ -174,7 +174,6 @@ ${populate_cards(team)}
 
     return html
 }
-///
-///<a href="mailto:${member.email}">Email: ${member.email}</a >
+
 
 
